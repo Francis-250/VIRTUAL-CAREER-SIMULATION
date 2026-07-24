@@ -2,7 +2,7 @@
 $active = basename($_SERVER['PHP_SELF']);
 $links = user()['role'] === 'admin'
     ? ['index.php' => ['speedometer2', 'Reports Dashboard'], 'recommendations.php' => ['compass', 'Recommendations Report'], 'users.php' => ['people', 'User Management'], 'feedback.php' => ['chat-left-text', 'Feedback Report'], 'logs.php' => ['journal-text', 'Admin Logs']]
-    : ['careers.php' => ['briefcase', 'Careers'], 'quizzes.php' => ['question-circle', 'Quizzes'], 'simulations.php' => ['controller', 'Simulations'], 'categories.php' => ['tags', 'Categories'], 'skills.php' => ['tools', 'Skills'], 'interest_questions.php' => ['clipboard-heart', 'Interest Questions'], 'badges.php' => ['award', 'Badges'], 'jobs.php' => ['building', 'Job Opportunities']];
+    : ['careers.php' => ['briefcase', 'Careers'], 'quizzes.php' => ['question-circle', 'Quizzes'], 'simulations.php' => ['controller', 'Simulations'], 'categories.php' => ['tags', 'Categories'], 'skills.php' => ['tools', 'Skills'], 'interest_questions.php' => ['clipboard-heart', 'Interest Questions'], 'badges.php' => ['award', 'Badges'], 'jobs.php' => ['building', 'Job Opportunities'], 'applications.php' => ['file-earmark-person', 'Applications']];
 ?>
 <aside class="admin-sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="adminSidebar">
     <div class="offcanvas-header d-lg-none"><span class="text-white fw-bold">CareerSim</span><button class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#adminSidebar"></button></div>
