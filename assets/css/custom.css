@@ -1,42 +1,1672 @@
-:root{--cs-blue:#173b67;--cs-teal:#0f8b8d;--cs-bg:#f4f7fa;--cs-text:#203040}
-body{background:var(--cs-bg);color:var(--cs-text);font-family:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif}
-.public-navbar{height:65px}.public-navbar .navbar-brand{font-size:19px;color:#0b1c30!important}.public-navbar .navbar-nav{gap:10px!important}.public-navbar .nav-link{font:600 12px/20px "Hanken Grotesk";letter-spacing:.05em;color:#45464d;text-transform:none;padding:21px 4px 18px!important;border-bottom:2px solid transparent}.public-navbar .nav-link:hover,.public-navbar .nav-link.active{color:#0b1c30;border-bottom-color:#0d9488}.public-navbar .btn{font:600 12px "Hanken Grotesk";border-radius:8px}
-.public-footer{border-top:1px solid #c6c6cd;background:#f8f9ff;padding:28px 24px;text-align:center;margin-top:56px}.public-footer strong{font-size:16px;color:#0b1c30}.public-footer p{color:#76777d;font-size:13px;margin:8px 0}.public-footer div{display:flex;gap:24px;justify-content:center}.public-footer a{color:#45464d;text-decoration:none;font:600 11px "Hanken Grotesk"}
-.student-catalog{background:#f8f9ff;color:#0b1c30}.career-catalog-shell{width:min(1280px,100%);margin:auto;padding:48px 32px 24px}.career-catalog-header{margin-bottom:42px}.career-catalog-header h1{font-size:32px;line-height:40px;font-weight:700;letter-spacing:-.02em;margin:0 0 6px}.career-catalog-header p{font-size:16px;color:#45464d;margin:0}
-.career-filter-card{background:#fff;border:1px solid #c6c6cd;border-radius:12px;padding:16px;margin-bottom:48px;display:grid;grid-template-columns:1fr 256px auto;gap:16px;box-shadow:0 4px 8px rgba(15,23,42,.04)}.career-filter-card .form-control,.career-filter-card .form-select{height:44px;background:#eff4ff;border:1px solid #c6c6cd;border-radius:8px;font-size:14px}.career-filter-card .form-control:focus,.career-filter-card .form-select:focus{border-color:#0d9488;box-shadow:0 0 0 2px rgba(13,148,136,.18)}.career-filter-card .btn{background:#131b2e;color:#fff;border-radius:8px;padding:0 30px;font-weight:600}.career-filter-card .btn:hover{background:#000;color:#fff}.career-search-field{position:relative}.career-search-field i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#76777d;z-index:2}.career-search-field input{padding-left:42px}
-.career-bento-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.catalog-career-card{background:#fff;border:1px solid #c6c6cd;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:0 4px 8px rgba(15,23,42,.04);transition:transform .2s,box-shadow .2s}.catalog-career-card:hover{transform:translateY(-2px);box-shadow:0 10px 18px rgba(15,23,42,.08)}.catalog-career-media{height:192px;background:#e5eeff;position:relative;overflow:hidden}.catalog-career-media:after{content:"";position:absolute;inset:0;background:rgba(229,238,255,.42)}.catalog-career-media img{width:100%;height:100%;object-fit:cover}.catalog-career-media>div{position:absolute;inset:0;z-index:1;display:grid;place-items:center;padding:24px;text-align:center}.catalog-career-media h2{font-size:24px;line-height:32px;font-weight:700;color:#0b1c30;margin:0}.catalog-career-body{padding:24px;display:flex;flex-direction:column;flex:1}.catalog-category{align-self:flex-start;background:#dce9ff;color:#45464d;border-radius:4px;padding:3px 8px;text-transform:uppercase;letter-spacing:.05em;font:600 11px "Hanken Grotesk"}.catalog-summary{font-size:14px;line-height:21px;color:#45464d;margin:14px 0 22px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.catalog-meta{display:flex;flex-direction:column;gap:14px}.catalog-meta>div{display:flex;justify-content:space-between;align-items:center;gap:16px}.catalog-meta span{color:#76777d;text-transform:uppercase;letter-spacing:.08em;font:600 10px "Hanken Grotesk"}.catalog-meta strong{font:700 14px "Hanken Grotesk";color:#0b1c30}.catalog-growth{padding:4px 9px;border-radius:999px!important;font-size:11px!important}.catalog-growth.growth-high_growth{background:#ede9fe;color:#6d28d9}.catalog-growth.growth-growing{background:#ccfbf1;color:#047857}.catalog-growth.growth-stable{background:#f1f5f9;color:#475569}.catalog-growth.growth-declining{background:#fee2e2;color:#b91c1c}.catalog-action{border-top:1px solid #c6c6cd;margin-top:18px;padding-top:16px}.catalog-action a{display:block;text-align:center;background:#131b2e;color:#fff;text-decoration:none;border-radius:8px;padding:10px;font-weight:600}.catalog-action a:hover{background:#000}
-@media(max-width:991.98px){.career-bento-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.career-filter-card{grid-template-columns:1fr 220px auto}}@media(max-width:767.98px){.public-navbar{height:auto}.public-navbar .nav-link{padding:10px 4px!important;border-bottom:0;border-left:2px solid transparent;padding-left:10px!important}.public-navbar .nav-link.active{border-left-color:#0d9488}.career-catalog-shell{padding:34px 18px 20px}.career-catalog-header{margin-bottom:28px}.career-filter-card{grid-template-columns:1fr;margin-bottom:32px}.career-filter-card .btn{height:44px}.career-bento-grid{grid-template-columns:1fr}.public-footer div{flex-wrap:wrap;gap:14px}}
-.assessment-page{background:#f8f9ff;color:#0b1c30}.assessment-shell{width:min(896px,100%);margin:0 auto;padding:48px 24px 20px}.assessment-header-card,.assessment-question-card,.assessment-result-card{background:#fff;border:1px solid #c6c6cd;border-radius:12px;box-shadow:0 4px 8px rgba(15,23,42,.04)}.assessment-header-card{padding:32px;margin-bottom:32px}.assessment-header-card h1{font-size:32px;line-height:40px;font-weight:700;letter-spacing:-.02em;margin:0 0 8px}.assessment-header-card>p{font-size:16px;line-height:24px;color:#45464d;margin:0}.assessment-progress{display:flex;align-items:center;gap:16px;margin-top:30px}.assessment-progress>div{height:8px;flex:1;background:#dce9ff;border-radius:999px;overflow:hidden}.assessment-progress span{display:block;height:100%;width:0;background:#0d9488;border-radius:999px;transition:width .35s}.assessment-progress strong{white-space:nowrap;color:#45464d;font:600 12px "Hanken Grotesk";letter-spacing:.04em}.assessment-result-card{padding:20px 24px;margin-bottom:24px}.assessment-result-card>div:first-child{display:flex;align-items:center;gap:14px}.assessment-result-card{display:grid;grid-template-columns:1fr auto;align-items:center}.assessment-result-icon{width:42px;height:42px;border-radius:50%;background:#ccfbf1;color:#047857;display:grid;place-items:center}.assessment-result-card h2{font-size:16px;font-weight:700;margin:0}.assessment-result-card p{font-size:13px;color:#76777d;margin:3px 0 0}.assessment-result-card .collapse{grid-column:1/-1}.assessment-chart-wrap{height:320px}
-.assessment-question-card{overflow:hidden}.assessment-question-row{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:24px;margin:0;border:0;border-bottom:1px solid #c6c6cd;min-width:0}.assessment-question-row:last-child{border-bottom:0}.assessment-question-row:hover{background:#f8f9ff}.assessment-question-row legend{float:none;width:auto;max-width:480px;margin:0;font-size:16px;line-height:24px;color:#0b1c30}.assessment-scale{display:flex;align-items:center;gap:22px;flex:0 0 auto}.assessment-scale label{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer}.assessment-scale input{position:absolute;opacity:0;pointer-events:none}.assessment-scale label>span{width:24px;height:24px;border:2px solid #76777d;border-radius:50%;display:grid;place-items:center;transition:.15s}.assessment-scale label>span:after{content:"";width:12px;height:12px;border-radius:50%;background:#0d9488;transform:scale(0);transition:.15s}.assessment-scale input:checked+span{border-color:#0d9488}.assessment-scale input:checked+span:after{transform:scale(1)}.assessment-scale input:focus-visible+span{outline:3px solid rgba(13,148,136,.25);outline-offset:2px}.assessment-scale small{color:#45464d;font:600 12px "Hanken Grotesk"}.assessment-actions{text-align:center;margin:44px 0 12px}.assessment-actions .btn{background:#000;color:#fff;border-radius:8px;padding:13px 38px;font-size:18px;font-weight:600;box-shadow:0 6px 16px rgba(0,0,0,.12)}.assessment-actions .btn:hover{background:#131b2e;color:#fff}.assessment-actions p{color:#45464d;font-size:13px;margin:14px 0 0}
-@media(max-width:767.98px){.assessment-shell{padding:32px 16px 10px}.assessment-header-card{padding:24px}.assessment-header-card h1{font-size:27px}.assessment-progress{align-items:flex-start;flex-direction:column;gap:8px}.assessment-progress>div{width:100%;flex:none}.assessment-question-row{align-items:flex-start;flex-direction:column;gap:18px;padding:20px}.assessment-scale{width:100%;justify-content:space-between;gap:8px}.assessment-result-card{grid-template-columns:1fr;gap:14px}.assessment-result-card>.btn{justify-self:start}}
-.progress-page{background:#f8f9ff;color:#0b1c30}.progress-shell{width:min(1280px,100%);margin:auto;padding:28px 32px 20px}.progress-page-header{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:38px}.progress-page-header h1{font-size:32px;line-height:40px;font-weight:700;letter-spacing:-.02em;margin:0 0 6px}.progress-page-header p{color:#45464d;font-size:14px;margin:0}.progress-page-header button{border:0;background:#131b2e;color:#fff;border-radius:8px;padding:11px 20px;font:600 12px "Hanken Grotesk";display:flex;align-items:center;gap:8px}.progress-page-header button:hover{background:#000}
-.progress-kpi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-bottom:38px}.progress-kpi,.progress-panel{position:relative;background:#fff;border:1px solid #c6c6cd;border-radius:12px;box-shadow:0 4px 8px rgba(15,23,42,.04);transition:transform .2s,box-shadow .2s}.progress-kpi:hover,.progress-panel:hover{transform:translateY(-2px);box-shadow:0 10px 18px rgba(15,23,42,.07)}.progress-kpi{padding:24px;overflow:hidden}.progress-kpi:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:#0d9488}.progress-kpi h2{color:#45464d;text-transform:uppercase;letter-spacing:.08em;font:600 12px "Hanken Grotesk";margin:0 0 8px}.progress-kpi>div:nth-of-type(1){display:flex;align-items:baseline;gap:5px}.progress-kpi strong{font:700 32px/40px "Hanken Grotesk";color:#0b1c30}.progress-kpi div>span:not(.progress-kpi-bar span){font-size:18px;color:#45464d}.progress-kpi>p{font-size:13px;font-style:italic;color:#76777d;margin:13px 0 0}.progress-kpi-bar{height:6px;background:#e5eeff;border-radius:999px;margin-top:14px;overflow:hidden}.progress-kpi-bar span{display:block;height:100%;background:#0d9488;border-radius:999px}.progress-mini-badges{display:flex!important;gap:8px;margin-top:12px}.progress-mini-badges span{width:32px;height:32px;border-radius:50%;background:#eff4ff;border:1px dashed #c6c6cd;display:grid;place-items:center!important;color:#0d9488}
-.progress-bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}.progress-panel{padding:30px}.progress-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}.progress-panel-heading h2,.progress-interest>h2{font-size:24px;line-height:32px;font-weight:600;margin:0}.progress-panel-heading>i{color:#45464d;font-size:21px}.progress-panel-heading>a{color:#0d9488;text-decoration:none;font:600 12px "Hanken Grotesk"}.progress-interest{grid-column:span 7;min-height:360px;display:flex;flex-direction:column}.progress-interest:not(:has(.progress-chart)){align-items:center;justify-content:center;text-align:center}.progress-interest>p{max-width:410px;color:#45464d;font-size:14px;line-height:21px;margin:12px 0 25px}.progress-interest>a{background:#0d9488;color:#fff;text-decoration:none;border-radius:8px;padding:11px 28px;font-weight:600}.progress-empty-icon{width:80px;height:80px;border-radius:50%;background:#86f2e4;display:grid;place-items:center;color:#006a61;font-size:34px;margin-bottom:20px}.progress-chart{height:285px;min-height:0}.progress-quiz{grid-column:span 5;min-height:360px;display:flex;flex-direction:column}.progress-dashed-empty{flex:1;min-height:160px;border:2px dashed #c6c6cd;border-radius:8px;background:#f8f9ff;display:grid;place-items:center;text-align:center;padding:24px;color:#45464d;font-size:14px;line-height:21px}.progress-recommendations{grid-column:span 8}.recommendation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.recommendation-tile{border:1px solid #c6c6cd;border-radius:8px;padding:16px;background:rgba(229,238,255,.3);display:flex;gap:13px;text-decoration:none;color:#0b1c30}.recommendation-tile:hover{background:#eff4ff}.recommendation-tile>span{width:42px;height:42px;flex:0 0 42px;border-radius:8px;background:#e5eeff;display:grid;place-items:center;color:#0d9488}.recommendation-tile strong,.recommendation-tile small{display:block}.recommendation-tile small{color:#0d9488;font:600 11px "Hanken Grotesk";margin-top:3px}.recommendation-tile p{color:#45464d;font-size:12px;line-height:17px;margin:8px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.progress-badges{grid-column:span 4}.badge-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.badge-gallery>div{text-align:center;min-width:0}.badge-gallery span{width:64px;height:64px;max-width:100%;aspect-ratio:1;border-radius:50%;background:#eff4ff;border:1px solid #c6c6cd;display:grid;place-items:center;margin:auto;color:#0d9488;font-size:22px}.badge-gallery small{display:block;font:600 10px/14px "Hanken Grotesk";margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.badge-gallery .locked span{border:2px dashed #c6c6cd;background:#f8f9ff;color:#c6c6cd}
-@media(max-width:991.98px){.progress-interest,.progress-quiz,.progress-recommendations,.progress-badges{grid-column:span 12}.progress-kpi-grid{grid-template-columns:1fr}.progress-panel{padding:24px}}@media(max-width:767.98px){.progress-shell{padding:28px 16px 12px}.progress-page-header{align-items:flex-start;flex-direction:column;margin-bottom:28px}.progress-kpi-grid{gap:16px;margin-bottom:24px}.progress-bento{gap:16px}.recommendation-grid{grid-template-columns:1fr}.progress-panel-heading h2,.progress-interest>h2{font-size:21px}}
-.management-body .create-action{align-self:flex-start!important;display:inline-flex!important;align-items:center;justify-content:center;gap:8px;min-width:0;height:44px;padding:0 17px!important;border-radius:8px!important;font-size:14px!important;line-height:1!important;white-space:nowrap;box-shadow:0 2px 6px rgba(15,23,42,.07)}.management-body .create-action i{font-size:17px;line-height:1;margin:0!important}.management-body .create-action:hover{background:#000!important;transform:translateY(-1px)}
-.management-body .ai-generate{align-self:flex-start!important;display:inline-flex!important;align-items:center;justify-content:center;gap:7px;width:auto!important;min-width:0!important;height:40px!important;padding:0 14px!important;border-radius:8px!important;font-size:13px!important;line-height:1!important;white-space:nowrap}.management-body .ai-generate i{font-size:15px;line-height:1}
-.quiz-question-builder .modal-body{padding:24px}.quiz-ai-invite{display:flex;align-items:center;justify-content:space-between;gap:20px;background:#eff4ff;border:1px solid #d3e4fe;border-radius:10px;padding:16px;margin-bottom:22px}.quiz-ai-invite>div{display:flex;align-items:center;gap:12px}.quiz-ai-invite>div>i{width:38px;height:38px;border-radius:50%;background:#ccfbf1;color:#0d9488;display:grid;place-items:center;font-size:18px}.quiz-ai-invite strong,.quiz-ai-invite small{display:block}.quiz-ai-invite strong{font-size:14px;color:#0f172a}.quiz-ai-invite small{font-size:12px;color:#64748b;margin-top:2px}.quiz-question-builder .input-group{border:1px solid #c6c6cd;border-radius:8px;overflow:hidden}.quiz-question-builder .input-group:focus-within{border-color:#0d9488;box-shadow:0 0 0 2px rgba(13,148,136,.12)}.quiz-question-builder .input-group .form-control,.quiz-question-builder .input-group .input-group-text{border:0}.quiz-question-builder .input-group-text{background:#eff4ff}.quiz-question-builder input[name=correct_option]:checked{background-color:#0d9488;border-color:#0d9488}
-@media(max-width:575.98px){.management-body .create-action{height:40px;padding:0 14px!important;font-size:13px!important}.management-body .create-action i{font-size:15px}}
-@media(max-width:575.98px){.quiz-ai-invite{align-items:flex-start;flex-direction:column}.quiz-ai-invite .ai-generate{width:100%!important}}
-.profile-onboarding{background:#f8f9ff}.profile-onboarding-shell{min-height:calc(100vh - 65px);display:grid;place-items:start center;padding:48px 20px}.profile-onboarding-card{width:min(720px,100%);background:#fff;border:1px solid #c6c6cd;border-radius:14px;padding:34px;box-shadow:0 10px 28px rgba(15,23,42,.07)}.profile-onboarding-card h1{font-size:30px;font-weight:700;margin:26px 0 8px}.profile-onboarding-card>p{color:#45464d;margin-bottom:26px}.profile-step{display:flex;align-items:center;gap:12px;padding-bottom:20px;border-bottom:1px solid #dce3ec}.profile-step>span{width:38px;height:38px;border-radius:50%;background:#0d9488;color:#fff;display:grid;place-items:center;font-weight:700}.profile-step strong,.profile-step small{display:block}.profile-step small{color:#76777d;margin-top:2px}.profile-onboarding-card .form-control,.profile-onboarding-card .form-select{min-height:44px;border-color:#c6c6cd}.profile-onboarding-card .btn-primary{background:#131b2e!important;border-color:#131b2e!important;min-height:46px;border-radius:8px;font-weight:600}
-.text-primary{color:var(--cs-blue)!important}.bg-primary,.btn-primary{background-color:var(--cs-blue)!important;border-color:var(--cs-blue)!important}
-.btn-primary:hover{background-color:#102f55!important}.btn-teal{background:#0f8b8d;color:#fff}.btn-teal:hover{background:#0b7476;color:#fff}
-.hero{padding:6rem 0;background:#eaf1f7}.card{border:0;box-shadow:0 .25rem 1.1rem rgba(25,45,70,.08);border-radius:1rem}
-.career-card{height:100%;transition:transform .2s}.career-card:hover{transform:translateY(-3px)}.career-image{height:180px;object-fit:cover;background:#dfe8ef}
-.career-chat-toggle{position:fixed;right:24px;bottom:24px;z-index:1020;border:0;border-radius:999px;background:#0f172a;color:#fff;padding:13px 18px;box-shadow:0 8px 24px rgba(15,23,42,.22);display:flex;gap:9px;align-items:center;font-weight:600}.career-chat-toggle:hover{background:#0d9488}.career-chat-panel{width:min(420px,100vw)!important}.career-chat-messages{display:flex;flex-direction:column;gap:10px;overflow-y:auto;min-height:0;flex:1}.chat-bubble{max-width:88%;padding:11px 14px;border-radius:14px;white-space:pre-wrap;font-size:14px}.chat-bubble.assistant{background:#eff4ff;align-self:flex-start}.chat-bubble.user{background:#0f172a;color:#fff;align-self:flex-end}
-.metric{border-left:4px solid var(--cs-teal)}.notification-menu{width:min(360px,90vw);max-height:400px;overflow:auto}
-.management-body{background:#f8faff;font-family:Manrope,system-ui,sans-serif;color:#0b1c30}.admin-shell{min-height:100vh}.admin-sidebar{--bs-offcanvas-bg:#0f172a;--bs-offcanvas-color:#fff;width:260px!important;background-color:#0f172a!important;color:#fff!important;position:fixed;inset:0 auto 0 0;overflow:hidden;border-right:1px solid rgba(255,255,255,.08);z-index:1050;display:flex;flex-direction:column;transition:width .22s ease}
-.admin-brand{display:flex;align-items:center;gap:11px;padding:18px 20px 24px;min-height:80px}.admin-brand-mark{width:38px;height:38px;flex:0 0 38px;border-radius:8px;background:#0d9488;display:grid;place-items:center;font-size:18px}.admin-brand strong{display:block;font:700 21px/1.1 Manrope}.admin-brand small{display:block;margin-top:3px;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.48);font:600 10px Hanken Grotesk}
-.admin-nav{flex:1;min-height:0}.admin-nav a,.admin-sidebar-footer a{display:flex;align-items:center;gap:13px;padding:11px 20px;color:rgba(255,255,255,.68);text-decoration:none;border-left:3px solid transparent;transition:.2s;white-space:nowrap;font-size:13px;line-height:18px}.admin-nav a i,.admin-sidebar-footer a i{font-size:16px;width:21px;flex:0 0 21px;text-align:center}.admin-nav a:hover,.admin-sidebar-footer a:hover{background:rgba(255,255,255,.06);color:#fff}.admin-nav a.active{background:rgba(255,255,255,.06);border-left-color:#0d9488;color:#fff;font-weight:600}.admin-nav a.active i{color:#2dd4bf}.admin-sidebar-footer{border-top:1px solid rgba(255,255,255,.1);padding:8px 0 10px}
-.admin-main{margin-left:260px;min-height:100vh;transition:margin-left .22s ease}.admin-top{height:80px;background:#fff;box-shadow:0 2px 12px rgba(15,23,42,.06);position:sticky;top:0;z-index:1040}.admin-collapse-button{width:38px;height:38px;place-items:center;border:1px solid #d8dee8;background:#fff;border-radius:8px;color:#0f172a;flex:0 0 auto}.admin-collapse-button:hover{background:#eff4ff;color:#0d9488}.admin-search{width:min(384px,35vw);position:relative}.admin-search i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#76777d;z-index:2}.admin-search .form-control{border:0;background:#f8f9ff;padding:11px 14px 11px 42px;border-radius:8px}.admin-search .form-control:focus{box-shadow:0 0 0 2px #0d9488}.admin-icon-button{border:0;background:transparent;color:#76777d;position:relative;font-size:19px;padding:8px}.admin-icon-button span{position:absolute;width:7px;height:7px;background:#ba1a1a;border-radius:50%;right:6px;top:5px}.admin-divider{width:1px;height:32px;background:#c6c6cd}.admin-profile-name{font-size:14px;font-weight:700;color:#0f172a}.admin-profile-role{font-size:11px;color:#76777d}.admin-avatar{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#dce9ff;color:#0f172a;font-weight:700;border:1px solid #c6c6cd}.admin-signout{border:1px solid #76777d;border-radius:8px;color:#0f172a;font-weight:600;padding:8px 16px}.admin-signout:hover{background:#0f172a;color:#fff}.admin-canvas{padding:32px;max-width:1700px;margin:auto}.admin-menu-button{color:#0f172a}
-@media(min-width:992px){.sidebar-is-collapsed .admin-sidebar{width:76px!important}.sidebar-is-collapsed .admin-main{margin-left:76px}.sidebar-is-collapsed .admin-brand{padding-inline:17px}.sidebar-is-collapsed .admin-brand-copy,.sidebar-is-collapsed .admin-nav a span,.sidebar-is-collapsed .admin-sidebar-footer a span{display:none}.sidebar-is-collapsed .admin-nav a,.sidebar-is-collapsed .admin-sidebar-footer a{justify-content:center;padding:12px 0;border-left-width:3px}.sidebar-is-collapsed .admin-nav a i,.sidebar-is-collapsed .admin-sidebar-footer a i{width:auto;flex-basis:auto;font-size:18px}}
-.management-body h1,.management-body h2,.management-body h3{font-family:Manrope}.management-body h1.h3{font-size:32px;line-height:40px;letter-spacing:-.02em;font-weight:700;color:#0f172a;margin-bottom:4px}.management-body .card{border:1px solid #c6c6cd;box-shadow:0 2px 8px rgba(15,23,42,.05);border-radius:12px}.management-body .table{color:#45464d}.management-body .table thead th{background:#f8f9ff;color:#76777d;text-transform:uppercase;letter-spacing:.05em;font:600 12px/16px "Hanken Grotesk";padding:16px 24px;border-bottom-color:#c6c6cd}.management-body .table tbody td{padding:18px 24px;vertical-align:middle;border-color:rgba(198,198,205,.5)}.management-body .table tbody tr:hover>*{background:#eff4ff}.management-body .btn-primary{background:#0f172a!important;border-color:#0f172a!important;border-radius:8px;font-weight:600;padding:10px 22px}.management-body .btn-outline-primary{color:#0d9488;border-color:#0d9488}.management-body .btn-outline-primary:hover{background:#0d9488;color:#fff}.management-body .metric{border-left:4px solid #0d9488}
-.admin-page-kicker{font:600 12px/16px "Hanken Grotesk";color:#0d9488;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}.admin-stat-card{position:relative;overflow:hidden;padding:22px 24px}.admin-stat-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--stat-color,#0d9488)}.admin-stat-label{color:#76777d;text-transform:uppercase;letter-spacing:.05em;font:600 12px "Hanken Grotesk"}.admin-stat-value{font:700 28px/34px "Hanken Grotesk";color:#0f172a;margin-top:4px}.admin-stat-note{font-size:12px;color:#006a61;margin-top:12px;font-weight:600}.status-pill{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600}.status-active{background:#d1fae5;color:#047857}.status-inactive{background:#f1f5f9;color:#475569}.growth-high_growth{background:#f3e8ff;color:#7e22ce}.growth-growing{background:#dbeafe;color:#1d4ed8}.growth-stable{background:#f1f5f9;color:#475569}.growth-declining{background:#fee2e2;color:#b91c1c}.chart-box{height:320px}
-@media(min-width:992px){.admin-sidebar.offcanvas-lg{background-color:#0f172a!important}}@media(max-width:991.98px){.admin-sidebar{position:fixed!important;background-color:#0f172a!important}.admin-main{margin-left:0}.admin-canvas{padding:24px 16px}.hero{padding:4rem 0}}@media(max-width:575.98px){.admin-top{height:70px}.admin-signout{padding:7px 10px}.admin-canvas{padding:20px 12px}.management-body .table thead th,.management-body .table tbody td{padding:14px 16px}}
-.job-card{border:1px solid #e2e8f0;box-shadow:0 8px 24px rgba(15,23,42,.05)}
-.job-type{display:inline-block;padding:.28rem .65rem;border-radius:999px;background:#e6fffb;color:#0f766e;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
-.job-building{font-size:1.8rem;color:#0d9488;background:#ecfeff;border-radius:12px;padding:.65rem}
-.application-feedback{background:#f0fdfa;border-left:3px solid #0d9488;border-radius:8px;padding:1rem;color:#134e4a}
-.profile-document-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:#ecfeff;color:#0d9488;font-size:1.4rem}
-.education-item{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-top:1px solid #e2e8f0}
-.empty-profile-state{padding:2rem;text-align:center;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:10px;color:#64748b}
+:root {
+  --cs-blue: #173b67;
+  --cs-teal: #0f8b8d;
+  --cs-bg: #f4f7fa;
+  --cs-text: #203040;
+}
+body {
+  background: var(--cs-bg);
+  color: var(--cs-text);
+  font-family:
+    Manrope,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+}
+.public-navbar {
+  height: 65px;
+}
+.public-navbar .navbar-brand {
+  font-size: 19px;
+  color: #0b1c30 !important;
+}
+.public-navbar .navbar-nav {
+  gap: 10px !important;
+}
+.public-navbar .nav-link {
+  font: 600 12px/20px "Hanken Grotesk";
+  letter-spacing: 0.05em;
+  color: #45464d;
+  text-transform: none;
+  padding: 21px 4px 18px !important;
+  border-bottom: 2px solid transparent;
+}
+.public-navbar .nav-link:hover,
+.public-navbar .nav-link.active {
+  color: #0b1c30;
+  border-bottom-color: #0d9488;
+}
+.public-navbar .btn {
+  font: 600 12px "Hanken Grotesk";
+  border-radius: 8px;
+}
+.public-footer {
+  border-top: 1px solid #c6c6cd;
+  background: #f8f9ff;
+  padding: 28px 24px;
+  text-align: center;
+  margin-top: 56px;
+}
+.public-footer strong {
+  font-size: 16px;
+  color: #0b1c30;
+}
+.public-footer p {
+  color: #76777d;
+  font-size: 13px;
+  margin: 8px 0;
+}
+.public-footer div {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+.public-footer a {
+  color: #45464d;
+  text-decoration: none;
+  font: 600 11px "Hanken Grotesk";
+}
+.student-catalog {
+  background: #f8f9ff;
+  color: #0b1c30;
+}
+.career-catalog-shell {
+  width: min(1280px, 100%);
+  margin: auto;
+  padding: 48px 32px 24px;
+}
+.career-catalog-header {
+  margin-bottom: 42px;
+}
+.career-catalog-header h1 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+}
+.career-catalog-header p {
+  font-size: 16px;
+  color: #45464d;
+  margin: 0;
+}
+.career-filter-card {
+  background: #fff;
+  border: 1px solid #c6c6cd;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 48px;
+  display: grid;
+  grid-template-columns: 1fr 256px auto;
+  gap: 16px;
+  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.04);
+}
+.career-filter-card .form-control,
+.career-filter-card .form-select {
+  height: 44px;
+  background: #eff4ff;
+  border: 1px solid #c6c6cd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.career-filter-card .form-control:focus,
+.career-filter-card .form-select:focus {
+  border-color: #0d9488;
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.18);
+}
+.career-filter-card .btn {
+  background: #131b2e;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0 30px;
+  font-weight: 600;
+}
+.career-filter-card .btn:hover {
+  background: #000;
+  color: #fff;
+}
+.career-search-field {
+  position: relative;
+}
+.career-search-field i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #76777d;
+  z-index: 2;
+}
+.career-search-field input {
+  padding-left: 42px;
+}
+.career-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.catalog-career-card {
+  background: #fff;
+  border: 1px solid #c6c6cd;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.04);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.catalog-career-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.08);
+}
+.catalog-career-media {
+  height: 192px;
+  background: #e5eeff;
+  position: relative;
+  overflow: hidden;
+}
+.catalog-career-media:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(229, 238, 255, 0.42);
+}
+.catalog-career-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.catalog-career-media > div {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+}
+.catalog-career-media h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #0b1c30;
+  margin: 0;
+}
+.catalog-career-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.catalog-category {
+  align-self: flex-start;
+  background: #dce9ff;
+  color: #45464d;
+  border-radius: 4px;
+  padding: 3px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font: 600 11px "Hanken Grotesk";
+}
+.catalog-summary {
+  font-size: 14px;
+  line-height: 21px;
+  color: #45464d;
+  margin: 14px 0 22px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.catalog-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.catalog-meta > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.catalog-meta span {
+  color: #76777d;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font: 600 10px "Hanken Grotesk";
+}
+.catalog-meta strong {
+  font: 700 14px "Hanken Grotesk";
+  color: #0b1c30;
+}
+.catalog-growth {
+  padding: 4px 9px;
+  border-radius: 999px !important;
+  font-size: 11px !important;
+}
+.catalog-growth.growth-high_growth {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+.catalog-growth.growth-growing {
+  background: #ccfbf1;
+  color: #047857;
+}
+.catalog-growth.growth-stable {
+  background: #f1f5f9;
+  color: #475569;
+}
+.catalog-growth.growth-declining {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.catalog-action {
+  border-top: 1px solid #c6c6cd;
+  margin-top: 18px;
+  padding-top: 16px;
+}
+.catalog-action a {
+  display: block;
+  text-align: center;
+  background: #131b2e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
+}
+.catalog-action a:hover {
+  background: #000;
+}
+@media (max-width: 991.98px) {
+  .career-bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .career-filter-card {
+    grid-template-columns: 1fr 220px auto;
+  }
+}
+@media (max-width: 767.98px) {
+  .public-navbar {
+    height: auto;
+  }
+  .public-navbar .nav-link {
+    padding: 10px 4px !important;
+    border-bottom: 0;
+    border-left: 2px solid transparent;
+    padding-left: 10px !important;
+  }
+  .public-navbar .nav-link.active {
+    border-left-color: #0d9488;
+  }
+  .career-catalog-shell {
+    padding: 34px 18px 20px;
+  }
+  .career-catalog-header {
+    margin-bottom: 28px;
+  }
+  .career-filter-card {
+    grid-template-columns: 1fr;
+    margin-bottom: 32px;
+  }
+  .career-filter-card .btn {
+    height: 44px;
+  }
+  .career-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .public-footer div {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+}
+.assessment-page {
+  background: #f8f9ff;
+  color: #0b1c30;
+}
+.assessment-shell {
+  width: min(896px, 100%);
+  margin: 0 auto;
+  padding: 48px 24px 20px;
+}
+.assessment-header-card,
+.assessment-question-card,
+.assessment-result-card {
+  background: #fff;
+  border: 1px solid #c6c6cd;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.04);
+}
+.assessment-header-card {
+  padding: 32px;
+  margin-bottom: 32px;
+}
+.assessment-header-card h1 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+.assessment-header-card > p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #45464d;
+  margin: 0;
+}
+.assessment-progress {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+.assessment-progress > div {
+  height: 8px;
+  flex: 1;
+  background: #dce9ff;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.assessment-progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #0d9488;
+  border-radius: 999px;
+  transition: width 0.35s;
+}
+.assessment-progress strong {
+  white-space: nowrap;
+  color: #45464d;
+  font: 600 12px "Hanken Grotesk";
+  letter-spacing: 0.04em;
+}
+.assessment-result-card {
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+.assessment-result-card > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.assessment-result-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.assessment-result-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ccfbf1;
+  color: #047857;
+  display: grid;
+  place-items: center;
+}
+.assessment-result-card h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+.assessment-result-card p {
+  font-size: 13px;
+  color: #76777d;
+  margin: 3px 0 0;
+}
+.assessment-result-card .collapse {
+  grid-column: 1/-1;
+}
+.assessment-chart-wrap {
+  height: 320px;
+}
+.assessment-question-card {
+  overflow: hidden;
+}
+.assessment-question-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 24px;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid #c6c6cd;
+  min-width: 0;
+}
+.assessment-question-row:last-child {
+  border-bottom: 0;
+}
+.assessment-question-row:hover {
+  background: #f8f9ff;
+}
+.assessment-question-row legend {
+  float: none;
+  width: auto;
+  max-width: 480px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0b1c30;
+}
+.assessment-scale {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex: 0 0 auto;
+}
+.assessment-scale label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.assessment-scale input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.assessment-scale label > span {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #76777d;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: 0.15s;
+}
+.assessment-scale label > span:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #0d9488;
+  transform: scale(0);
+  transition: 0.15s;
+}
+.assessment-scale input:checked + span {
+  border-color: #0d9488;
+}
+.assessment-scale input:checked + span:after {
+  transform: scale(1);
+}
+.assessment-scale input:focus-visible + span {
+  outline: 3px solid rgba(13, 148, 136, 0.25);
+  outline-offset: 2px;
+}
+.assessment-scale small {
+  color: #45464d;
+  font: 600 12px "Hanken Grotesk";
+}
+.assessment-actions {
+  text-align: center;
+  margin: 44px 0 12px;
+}
+.assessment-actions .btn {
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  padding: 13px 38px;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.assessment-actions .btn:hover {
+  background: #131b2e;
+  color: #fff;
+}
+.assessment-actions p {
+  color: #45464d;
+  font-size: 13px;
+  margin: 14px 0 0;
+}
+@media (max-width: 767.98px) {
+  .assessment-shell {
+    padding: 32px 16px 10px;
+  }
+  .assessment-header-card {
+    padding: 24px;
+  }
+  .assessment-header-card h1 {
+    font-size: 27px;
+  }
+  .assessment-progress {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .assessment-progress > div {
+    width: 100%;
+    flex: none;
+  }
+  .assessment-question-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px;
+  }
+  .assessment-scale {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .assessment-result-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .assessment-result-card > .btn {
+    justify-self: start;
+  }
+}
+.progress-page {
+  background: #f8f9ff;
+  color: #0b1c30;
+}
+.progress-shell {
+  width: min(1280px, 100%);
+  margin: auto;
+  padding: 28px 32px 20px;
+}
+.progress-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 38px;
+}
+.progress-page-header h1 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+}
+.progress-page-header p {
+  color: #45464d;
+  font-size: 14px;
+  margin: 0;
+}
+.progress-page-header button {
+  border: 0;
+  background: #131b2e;
+  color: #fff;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font: 600 12px "Hanken Grotesk";
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.progress-page-header button:hover {
+  background: #000;
+}
+.progress-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 38px;
+}
+.progress-kpi,
+.progress-panel {
+  position: relative;
+  background: #fff;
+  border: 1px solid #c6c6cd;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.04);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.progress-kpi:hover,
+.progress-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.07);
+}
+.progress-kpi {
+  padding: 24px;
+  overflow: hidden;
+}
+.progress-kpi:before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: #0d9488;
+}
+.progress-kpi h2 {
+  color: #45464d;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font: 600 12px "Hanken Grotesk";
+  margin: 0 0 8px;
+}
+.progress-kpi > div:nth-of-type(1) {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+.progress-kpi strong {
+  font: 700 32px/40px "Hanken Grotesk";
+  color: #0b1c30;
+}
+.progress-kpi div > span:not(.progress-kpi-bar span) {
+  font-size: 18px;
+  color: #45464d;
+}
+.progress-kpi > p {
+  font-size: 13px;
+  font-style: italic;
+  color: #76777d;
+  margin: 13px 0 0;
+}
+.progress-kpi-bar {
+  height: 6px;
+  background: #e5eeff;
+  border-radius: 999px;
+  margin-top: 14px;
+  overflow: hidden;
+}
+.progress-kpi-bar span {
+  display: block;
+  height: 100%;
+  background: #0d9488;
+  border-radius: 999px;
+}
+.progress-mini-badges {
+  display: flex !important;
+  gap: 8px;
+  margin-top: 12px;
+}
+.progress-mini-badges span {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #eff4ff;
+  border: 1px dashed #c6c6cd;
+  display: grid;
+  place-items: center !important;
+  color: #0d9488;
+}
+.progress-bento {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+}
+.progress-panel {
+  padding: 30px;
+}
+.progress-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.progress-panel-heading h2,
+.progress-interest > h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  margin: 0;
+}
+.progress-panel-heading > i {
+  color: #45464d;
+  font-size: 21px;
+}
+.progress-panel-heading > a {
+  color: #0d9488;
+  text-decoration: none;
+  font: 600 12px "Hanken Grotesk";
+}
+.progress-interest {
+  grid-column: span 7;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+.progress-interest:not(:has(.progress-chart)) {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.progress-interest > p {
+  max-width: 410px;
+  color: #45464d;
+  font-size: 14px;
+  line-height: 21px;
+  margin: 12px 0 25px;
+}
+.progress-interest > a {
+  background: #0d9488;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 11px 28px;
+  font-weight: 600;
+}
+.progress-empty-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #86f2e4;
+  display: grid;
+  place-items: center;
+  color: #006a61;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+.progress-chart {
+  height: 285px;
+  min-height: 0;
+}
+.progress-quiz {
+  grid-column: span 5;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+.progress-dashed-empty {
+  flex: 1;
+  min-height: 160px;
+  border: 2px dashed #c6c6cd;
+  border-radius: 8px;
+  background: #f8f9ff;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+  color: #45464d;
+  font-size: 14px;
+  line-height: 21px;
+}
+.progress-recommendations {
+  grid-column: span 8;
+}
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.recommendation-tile {
+  border: 1px solid #c6c6cd;
+  border-radius: 8px;
+  padding: 16px;
+  background: rgba(229, 238, 255, 0.3);
+  display: flex;
+  gap: 13px;
+  text-decoration: none;
+  color: #0b1c30;
+}
+.recommendation-tile:hover {
+  background: #eff4ff;
+}
+.recommendation-tile > span {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border-radius: 8px;
+  background: #e5eeff;
+  display: grid;
+  place-items: center;
+  color: #0d9488;
+}
+.recommendation-tile strong,
+.recommendation-tile small {
+  display: block;
+}
+.recommendation-tile small {
+  color: #0d9488;
+  font: 600 11px "Hanken Grotesk";
+  margin-top: 3px;
+}
+.recommendation-tile p {
+  color: #45464d;
+  font-size: 12px;
+  line-height: 17px;
+  margin: 8px 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.progress-badges {
+  grid-column: span 4;
+}
+.badge-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.badge-gallery > div {
+  text-align: center;
+  min-width: 0;
+}
+.badge-gallery span {
+  width: 64px;
+  height: 64px;
+  max-width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #eff4ff;
+  border: 1px solid #c6c6cd;
+  display: grid;
+  place-items: center;
+  margin: auto;
+  color: #0d9488;
+  font-size: 22px;
+}
+.badge-gallery small {
+  display: block;
+  font: 600 10px/14px "Hanken Grotesk";
+  margin-top: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.badge-gallery .locked span {
+  border: 2px dashed #c6c6cd;
+  background: #f8f9ff;
+  color: #c6c6cd;
+}
+@media (max-width: 991.98px) {
+  .progress-interest,
+  .progress-quiz,
+  .progress-recommendations,
+  .progress-badges {
+    grid-column: span 12;
+  }
+  .progress-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+  .progress-panel {
+    padding: 24px;
+  }
+}
+@media (max-width: 767.98px) {
+  .progress-shell {
+    padding: 28px 16px 12px;
+  }
+  .progress-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 28px;
+  }
+  .progress-kpi-grid {
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .progress-bento {
+    gap: 16px;
+  }
+  .recommendation-grid {
+    grid-template-columns: 1fr;
+  }
+  .progress-panel-heading h2,
+  .progress-interest > h2 {
+    font-size: 21px;
+  }
+}
+.management-body .create-action {
+  align-self: flex-start !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  height: 44px;
+  padding: 0 17px !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.07);
+}
+.management-body .create-action i {
+  font-size: 17px;
+  line-height: 1;
+  margin: 0 !important;
+}
+.management-body .create-action:hover {
+  background: #000 !important;
+  transform: translateY(-1px);
+}
+.management-body .ai-generate {
+  align-self: flex-start !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: auto !important;
+  min-width: 0 !important;
+  height: 40px !important;
+  padding: 0 14px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+  white-space: nowrap;
+}
+.management-body .ai-generate i {
+  font-size: 15px;
+  line-height: 1;
+}
+.quiz-question-builder .modal-body {
+  padding: 24px;
+}
+.quiz-ai-invite {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #eff4ff;
+  border: 1px solid #d3e4fe;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 22px;
+}
+.quiz-ai-invite > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.quiz-ai-invite > div > i {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ccfbf1;
+  color: #0d9488;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+.quiz-ai-invite strong,
+.quiz-ai-invite small {
+  display: block;
+}
+.quiz-ai-invite strong {
+  font-size: 14px;
+  color: #0f172a;
+}
+.quiz-ai-invite small {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+.quiz-question-builder .input-group {
+  border: 1px solid #c6c6cd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.quiz-question-builder .input-group:focus-within {
+  border-color: #0d9488;
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.12);
+}
+.quiz-question-builder .input-group .form-control,
+.quiz-question-builder .input-group .input-group-text {
+  border: 0;
+}
+.quiz-question-builder .input-group-text {
+  background: #eff4ff;
+}
+.quiz-question-builder input[name="correct_option"]:checked {
+  background-color: #0d9488;
+  border-color: #0d9488;
+}
+@media (max-width: 575.98px) {
+  .management-body .create-action {
+    height: 40px;
+    padding: 0 14px !important;
+    font-size: 13px !important;
+  }
+  .management-body .create-action i {
+    font-size: 15px;
+  }
+}
+@media (max-width: 575.98px) {
+  .quiz-ai-invite {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .quiz-ai-invite .ai-generate {
+    width: 100% !important;
+  }
+}
+.profile-onboarding {
+  background: #f8f9ff;
+}
+.profile-onboarding-shell {
+  min-height: calc(100vh - 65px);
+  display: grid;
+  place-items: start center;
+  padding: 48px 20px;
+}
+.profile-onboarding-card {
+  width: min(720px, 100%);
+  background: #fff;
+  border: 1px solid #c6c6cd;
+  border-radius: 14px;
+  padding: 34px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+.profile-onboarding-card h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 26px 0 8px;
+}
+.profile-onboarding-card > p {
+  color: #45464d;
+  margin-bottom: 26px;
+}
+.profile-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dce3ec;
+}
+.profile-step > span {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #0d9488;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+.profile-step strong,
+.profile-step small {
+  display: block;
+}
+.profile-step small {
+  color: #76777d;
+  margin-top: 2px;
+}
+.profile-onboarding-card .form-control,
+.profile-onboarding-card .form-select {
+  min-height: 44px;
+  border-color: #c6c6cd;
+}
+.profile-onboarding-card .btn-primary {
+  background: #131b2e !important;
+  border-color: #131b2e !important;
+  min-height: 46px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.text-primary {
+  color: var(--cs-blue) !important;
+}
+.bg-primary,
+.btn-primary {
+  background-color: var(--cs-blue) !important;
+  border-color: var(--cs-blue) !important;
+}
+.btn-primary:hover {
+  background-color: #102f55 !important;
+}
+.btn-teal {
+  background: #0f8b8d;
+  color: #fff;
+}
+.btn-teal:hover {
+  background: #0b7476;
+  color: #fff;
+}
+.hero {
+  padding: 6rem 0;
+  background: #eaf1f7;
+}
+.card {
+  border: 0;
+  box-shadow: 0 0.25rem 1.1rem rgba(25, 45, 70, 0.08);
+  border-radius: 1rem;
+}
+.career-card {
+  height: 100%;
+  transition: transform 0.2s;
+}
+.career-card:hover {
+  transform: translateY(-3px);
+}
+.career-image {
+  height: 180px;
+  object-fit: cover;
+  background: #dfe8ef;
+}
+.career-chat-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1020;
+  border: 0;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #fff;
+  padding: 13px 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.22);
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  font-weight: 600;
+}
+.career-chat-toggle:hover {
+  background: #0d9488;
+}
+.career-chat-panel {
+  width: min(420px, 100vw) !important;
+}
+.career-chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  min-height: 0;
+  flex: 1;
+}
+.chat-bubble {
+  max-width: 88%;
+  padding: 11px 14px;
+  border-radius: 14px;
+  white-space: pre-wrap;
+  font-size: 14px;
+}
+.chat-bubble.assistant {
+  background: #eff4ff;
+  align-self: flex-start;
+}
+.chat-bubble.user {
+  background: #0f172a;
+  color: #fff;
+  align-self: flex-end;
+}
+.metric {
+  border-left: 4px solid var(--cs-teal);
+}
+.notification-menu {
+  width: min(360px, 90vw);
+  max-height: 400px;
+  overflow: auto;
+}
+.management-body {
+  background: #f8faff;
+  font-family: Manrope, system-ui, sans-serif;
+  color: #0b1c30;
+}
+.admin-shell {
+  min-height: 100vh;
+}
+.admin-sidebar {
+  --bs-offcanvas-bg: #0f172a;
+  --bs-offcanvas-color: #fff;
+  width: 260px !important;
+  background-color: #0f172a !important;
+  color: #fff !important;
+  position: fixed;
+  inset: 0 auto 0 0;
+  overflow: hidden;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.22s ease;
+}
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 18px 20px 24px;
+  min-height: 80px;
+}
+.admin-brand-mark {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  border-radius: 8px;
+  background: #0d9488;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+.admin-brand strong {
+  display: block;
+  font: 700 21px/1.1 Manrope;
+}
+.admin-brand small {
+  display: block;
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: rgba(255, 255, 255, 0.48);
+  font: 600 10px Hanken Grotesk;
+}
+.admin-nav {
+  flex: 1;
+  min-height: 0;
+}
+.admin-nav a,
+.admin-sidebar-footer a {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 11px 20px;
+  color: rgba(255, 255, 255, 0.68);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: 0.2s;
+  white-space: nowrap;
+  font-size: 13px;
+  line-height: 18px;
+}
+.admin-nav a i,
+.admin-sidebar-footer a i {
+  font-size: 16px;
+  width: 21px;
+  flex: 0 0 21px;
+  text-align: center;
+}
+.admin-nav a:hover,
+.admin-sidebar-footer a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+.admin-nav a.active {
+  background: rgba(255, 255, 255, 0.06);
+  border-left-color: #0d9488;
+  color: #fff;
+  font-weight: 600;
+}
+.admin-nav a.active i {
+  color: #2dd4bf;
+}
+.admin-sidebar-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 0 10px;
+}
+.admin-main {
+  margin-left: 260px;
+  min-height: 100vh;
+  transition: margin-left 0.22s ease;
+}
+.admin-top {
+  height: 80px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+}
+.admin-collapse-button {
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid #d8dee8;
+  background: #fff;
+  border-radius: 8px;
+  color: #0f172a;
+  flex: 0 0 auto;
+}
+.admin-collapse-button:hover {
+  background: #eff4ff;
+  color: #0d9488;
+}
+.admin-search {
+  width: min(384px, 35vw);
+  position: relative;
+}
+.admin-search i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #76777d;
+  z-index: 2;
+}
+.admin-search .form-control {
+  border: 0;
+  background: #f8f9ff;
+  padding: 11px 14px 11px 42px;
+  border-radius: 8px;
+}
+.admin-search .form-control:focus {
+  box-shadow: 0 0 0 2px #0d9488;
+}
+.admin-icon-button {
+  border: 0;
+  background: transparent;
+  color: #76777d;
+  position: relative;
+  font-size: 19px;
+  padding: 8px;
+}
+.admin-icon-button span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #ba1a1a;
+  border-radius: 50%;
+  right: 6px;
+  top: 5px;
+}
+.admin-divider {
+  width: 1px;
+  height: 32px;
+  background: #c6c6cd;
+}
+.admin-profile-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.admin-profile-role {
+  font-size: 11px;
+  color: #76777d;
+}
+.admin-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #dce9ff;
+  color: #0f172a;
+  font-weight: 700;
+  border: 1px solid #c6c6cd;
+}
+.admin-signout {
+  border: 1px solid #76777d;
+  border-radius: 8px;
+  color: #0f172a;
+  font-weight: 600;
+  padding: 8px 16px;
+}
+.admin-signout:hover {
+  background: #0f172a;
+  color: #fff;
+}
+.admin-canvas {
+  padding: 32px;
+  max-width: 1700px;
+  margin: auto;
+}
+.admin-menu-button {
+  color: #0f172a;
+}
+@media (min-width: 992px) {
+  .sidebar-is-collapsed .admin-sidebar {
+    width: 76px !important;
+  }
+  .sidebar-is-collapsed .admin-main {
+    margin-left: 76px;
+  }
+  .sidebar-is-collapsed .admin-brand {
+    padding-inline: 17px;
+  }
+  .sidebar-is-collapsed .admin-brand-copy,
+  .sidebar-is-collapsed .admin-nav a span,
+  .sidebar-is-collapsed .admin-sidebar-footer a span {
+    display: none;
+  }
+  .sidebar-is-collapsed .admin-nav a,
+  .sidebar-is-collapsed .admin-sidebar-footer a {
+    justify-content: center;
+    padding: 12px 0;
+    border-left-width: 3px;
+  }
+  .sidebar-is-collapsed .admin-nav a i,
+  .sidebar-is-collapsed .admin-sidebar-footer a i {
+    width: auto;
+    flex-basis: auto;
+    font-size: 18px;
+  }
+}
+.management-body h1,
+.management-body h2,
+.management-body h3 {
+  font-family: Manrope;
+}
+.management-body h1.h3 {
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+.management-body .card {
+  border: 1px solid #c6c6cd;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  border-radius: 12px;
+}
+.management-body .table {
+  color: #45464d;
+}
+.management-body .table thead th {
+  background: #f8f9ff;
+  color: #76777d;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font: 600 12px/16px "Hanken Grotesk";
+  padding: 16px 24px;
+  border-bottom-color: #c6c6cd;
+}
+.management-body .table tbody td {
+  padding: 18px 24px;
+  vertical-align: middle;
+  border-color: rgba(198, 198, 205, 0.5);
+}
+.management-body .table tbody tr:hover > * {
+  background: #eff4ff;
+}
+.management-body .btn-primary {
+  background: #0f172a !important;
+  border-color: #0f172a !important;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 10px 22px;
+}
+.management-body .btn-outline-primary {
+  color: #0d9488;
+  border-color: #0d9488;
+}
+.management-body .btn-outline-primary:hover {
+  background: #0d9488;
+  color: #fff;
+}
+.management-body .metric {
+  border-left: 4px solid #0d9488;
+}
+.admin-page-kicker {
+  font: 600 12px/16px "Hanken Grotesk";
+  color: #0d9488;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+.admin-stat-card {
+  position: relative;
+  overflow: hidden;
+  padding: 22px 24px;
+}
+.admin-stat-card:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--stat-color, #0d9488);
+}
+.admin-stat-label {
+  color: #76777d;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font: 600 12px "Hanken Grotesk";
+}
+.admin-stat-value {
+  font: 700 28px/34px "Hanken Grotesk";
+  color: #0f172a;
+  margin-top: 4px;
+}
+.admin-stat-note {
+  font-size: 12px;
+  color: #006a61;
+  margin-top: 12px;
+  font-weight: 600;
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.status-active {
+  background: #d1fae5;
+  color: #047857;
+}
+.status-inactive {
+  background: #f1f5f9;
+  color: #475569;
+}
+.growth-high_growth {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+.growth-growing {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+.growth-stable {
+  background: #f1f5f9;
+  color: #475569;
+}
+.growth-declining {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.chart-box {
+  height: 320px;
+}
+@media (min-width: 992px) {
+  .admin-sidebar.offcanvas-lg {
+    background-color: #0f172a !important;
+  }
+}
+@media (max-width: 991.98px) {
+  .admin-sidebar {
+    position: fixed !important;
+    background-color: #0f172a !important;
+  }
+  .admin-main {
+    margin-left: 0;
+  }
+  .admin-canvas {
+    padding: 24px 16px;
+  }
+  .hero {
+    padding: 4rem 0;
+  }
+}
+@media (max-width: 575.98px) {
+  .admin-top {
+    height: 70px;
+  }
+  .admin-signout {
+    padding: 7px 10px;
+  }
+  .admin-canvas {
+    padding: 20px 12px;
+  }
+  .management-body .table thead th,
+  .management-body .table tbody td {
+    padding: 14px 16px;
+  }
+}
+.job-card {
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+.job-type {
+  display: inline-block;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  background: #e6fffb;
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.job-building {
+  font-size: 1.8rem;
+  color: #0d9488;
+  background: #ecfeff;
+  border-radius: 12px;
+  padding: 0.65rem;
+}
+.application-feedback {
+  background: #f0fdfa;
+  border-left: 3px solid #0d9488;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #134e4a;
+}
+.profile-document-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #ecfeff;
+  color: #0d9488;
+  font-size: 1.4rem;
+}
+.education-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid #e2e8f0;
+}
+.empty-profile-state {
+  padding: 2rem;
+  text-align: center;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  color: #64748b;
+}
+.quiz-question-list {
+  background: #f8fafc;
+  padding: 0.5rem 1.25rem;
+}
+.quiz-question-admin-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+.quiz-question-admin-row:last-child {
+  border-bottom: 0;
+}
+.quiz-question-admin-row small {
+  display: block;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+.catalog-career-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: #e2e8f0;
+  color: #64748b;
+  font-size: 3rem;
+}

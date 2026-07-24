@@ -1,10 +1,37 @@
 <?php
-require_once dirname(__DIR__).'/includes/functions.php';require_content_manager();
-$rows=$con->query('SELECT q.*,c.title career,(SELECT COUNT(*) FROM quiz_questions x WHERE x.quiz_id=q.id) questions FROM quizzes q JOIN careers c ON c.id=q.career_id ORDER BY q.created_at DESC')->fetch_all(MYSQLI_ASSOC);
-$aiOptions=array_map(fn($r)=>['id'=>$r['id'],'label'=>$r['career'].' — '.$r['title']],$rows);
-$pageTitle='Quizzes';require __DIR__.'/includes/header.php';?>
-<div class="d-flex justify-content-between align-items-start gap-3"><div><h1 class="h3">Quizzes</h1><p class="text-muted">Manage career knowledge checks.</p></div><div class="d-flex align-items-start gap-2"><button class="btn btn-outline-primary ai-generate" data-kind="quiz_questions" data-options="<?=e(json_encode($aiOptions))?>"><i class="bi bi-stars"></i> Generate questions</button><a class="btn btn-primary create-action content-editor-link" href="<?=url('admin/content_edit.php?entity=quiz')?>"><i class="bi bi-plus-circle"></i><span>Add quiz</span></a></div></div>
-<div class="card table-responsive"><table class="table mb-0"><thead><tr><th>Quiz</th><th>Career</th><th>Pass score</th><th>Questions</th><th class="text-end">Actions</th></tr></thead><tbody><?php foreach($rows as $r):?><tr><td><?=e($r['title'])?></td><td><?=e($r['career'])?></td><td><?=$r['pass_score']?>%</td><td><?=$r['questions']?></td><td class="text-end"><button class="btn btn-sm btn-outline-primary add-quiz-question" data-quiz-id="<?=$r['id']?>" data-quiz-title="<?=e($r['title'])?>"><i class="bi bi-plus-circle"></i> Add question</button> <a class="btn btn-sm btn-outline-primary content-editor-link" href="<?=url('admin/content_edit.php?entity=quiz&id='.$r['id'])?>">Edit quiz</a></td></tr><?php endforeach?></tbody></table></div>
-<div class="modal fade" id="quizQuestionModal" tabindex="-1"><div class="modal-dialog modal-lg"><form class="modal-content quiz-question-builder" id="quizQuestionForm"><div class="modal-header"><div><h2 class="modal-title fs-5">Create multiple-choice question</h2><small class="text-muted" id="quizQuestionTarget"></small></div><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><input type="hidden" name="csrf" value="<?=csrf_token()?>"><input type="hidden" name="quiz_id" id="questionQuizId"><div class="quiz-ai-invite"><div><i class="bi bi-stars"></i><span><strong>Generate a question set</strong><small>Create four multiple-choice questions based on this quiz title and career.</small></span></div><button type="button" class="btn btn-outline-primary ai-generate" id="questionAiGenerate" data-kind="quiz_questions" data-bs-dismiss="modal">Generate with AI</button></div><label class="form-label fw-semibold">Question</label><textarea class="form-control mb-3" name="question_text" maxlength="500" rows="3" required placeholder="Enter the multiple-choice question"></textarea><div class="row g-3"><?php for($i=0;$i<4;$i++):?><div class="col-md-6"><label class="form-label">Choice <?=$i+1?></label><div class="input-group"><span class="input-group-text"><input class="form-check-input mt-0" type="radio" name="correct_option" value="<?=$i?>" required title="Mark as correct"></span><input class="form-control" name="options[]" required maxlength="300" placeholder="Answer choice"></div></div><?php endfor?><div class="col-md-4"><label class="form-label">Points</label><input type="number" class="form-control" name="points" min="1" max="100" value="1" required></div></div><div class="form-text mt-3">Select the radio button beside the correct answer.</div></div><div class="modal-footer"><button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button><button class="btn btn-primary">Save question</button></div></form></div></div>
-<script>document.querySelectorAll('.add-quiz-question').forEach(button=>button.addEventListener('click',()=>{const form=document.getElementById('quizQuestionForm'),ai=document.getElementById('questionAiGenerate');form.reset();document.getElementById('questionQuizId').value=button.dataset.quizId;document.getElementById('quizQuestionTarget').textContent=button.dataset.quizTitle;ai.dataset.target=button.dataset.quizId;ai.dataset.context=button.dataset.quizTitle;bootstrap.Modal.getOrCreateInstance(document.getElementById('quizQuestionModal')).show()}));document.getElementById('quizQuestionForm').addEventListener('submit',async function(event){event.preventDefault();const button=this.querySelector('[type=submit]');button.disabled=true;try{const response=await fetch(APP.base+'admin/save_quiz_question.php',{method:'POST',body:new FormData(this),headers:{'X-CSRF-Token':APP.csrf}}),data=await response.json();if(!response.ok||!data.ok)throw new Error(data.message||'Could not save question.');toast(data.message,'success');bootstrap.Modal.getInstance(document.getElementById('quizQuestionModal'))?.hide();setTimeout(()=>location.reload(),450)}catch(error){toast(error.message,'danger');button.disabled=false}});</script>
-<?php require __DIR__.'/includes/footer.php';?>
+require_once dirname(__DIR__) . '/includes/functions.php';
+require_content_manager();
+$rows = $con->query('SELECT q.*,c.title career,(SELECT COUNT(*) FROM quiz_questions x WHERE x.quiz_id=q.id) questions FROM quizzes q JOIN careers c ON c.id=q.career_id ORDER BY q.created_at DESC')->fetch_all(MYSQLI_ASSOC);
+$pageTitle = 'Quizzes';
+require __DIR__ . '/includes/header.php'; ?>
+<div class="d-flex justify-content-between align-items-start gap-3 mb-4">
+    <div>
+        <h1 class="h3">Quizzes</h1>
+        <p class="text-muted">Create quiz details here. Questions are added from the linked simulation.</p>
+    </div><a class="btn btn-primary create-action content-editor-link" href="<?= url('admin/content_edit.php?entity=quiz') ?>"><i class="bi bi-plus-circle"></i><span>Add quiz</span></a>
+</div>
+<div class="card table-responsive">
+    <table class="table mb-0">
+        <thead>
+            <tr>
+                <th>Quiz</th>
+                <th>Career</th>
+                <th>Pass score</th>
+                <th>Time limit</th>
+                <th>Questions</th>
+                <th class="text-end">Actions</th>
+            </tr>
+        </thead>
+        <tbody><?php foreach ($rows as $r): ?><tr>
+                    <td><strong><?= e($r['title']) ?></strong>
+                        <div class="small text-muted"><?= e($r['description']) ?></div>
+                    </td>
+                    <td><?= e($r['career']) ?></td>
+                    <td><?= $r['pass_score'] ?>%</td>
+                    <td><?= $r['time_limit_minutes'] ?> minutes</td>
+                    <td><?= $r['questions'] ?></td>
+                    <td class="text-end"><a class="btn btn-sm btn-outline-primary content-editor-link" href="<?= url('admin/content_edit.php?entity=quiz&id=' . $r['id']) ?>">Edit quiz details</a></td>
+                </tr><?php endforeach ?></tbody>
+    </table>
+</div>
+<?php require __DIR__ . '/includes/footer.php'; ?>

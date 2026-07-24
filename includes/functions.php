@@ -6,6 +6,25 @@ require_once dirname(__DIR__) . '/config/groq.php';
 const BASE_URL = '/Virtual%20career%20simulation%20system';
 function url(string $path = ''): string { return BASE_URL . '/' . ltrim($path, '/'); }
 function e(mixed $value): string { return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8'); }
+function slugify(string $value): string {
+    $ascii = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $value);
+    $value = $ascii !== false ? $ascii : $value;
+    $slug = strtolower(trim((string)preg_replace('/[^a-zA-Z0-9]+/', '-', $value), '-'));
+    return $slug !== '' ? $slug : 'career';
+}
+function unique_career_slug(mysqli $con, string $title, int $excludeId = 0): string {
+    $base = slugify($title);
+    $slug = $base;
+    $suffix = 2;
+    $stmt = $con->prepare('SELECT id FROM careers WHERE slug=? AND id<>? LIMIT 1');
+    do {
+        $stmt->bind_param('si', $slug, $excludeId);
+        $stmt->execute();
+        $exists = (bool)$stmt->get_result()->fetch_assoc();
+        if ($exists) $slug = $base . '-' . $suffix++;
+    } while ($exists);
+    return $slug;
+}
 function user(): ?array { return $_SESSION['user'] ?? null; }
 function flash(string $type, string $message): void { $_SESSION['flash'][] = compact('type', 'message'); }
 function require_login(): void {

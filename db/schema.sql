@@ -113,6 +113,7 @@ CREATE TABLE career_skills (
 CREATE TABLE career_simulations (
   id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   career_id INT UNSIGNED NOT NULL,
+  quiz_id BIGINT UNSIGNED NULL,
   title VARCHAR(150) NOT NULL,
   description TEXT NULL,
   difficulty_level ENUM('beginner','intermediate','advanced') NOT NULL DEFAULT 'beginner',
@@ -122,6 +123,7 @@ CREATE TABLE career_simulations (
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   KEY idx_simulations_career (career_id),
+  KEY idx_simulations_quiz (quiz_id),
   CONSTRAINT fk_simulations_career FOREIGN KEY (career_id) REFERENCES careers(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
@@ -220,6 +222,7 @@ CREATE TABLE quizzes (
   is_active TINYINT(1) NOT NULL DEFAULT 1,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   KEY idx_quizzes_career (career_id),
+  UNIQUE KEY uq_quizzes_id_career (id,career_id),
   CONSTRAINT fk_quizzes_career FOREIGN KEY (career_id) REFERENCES careers(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
@@ -380,6 +383,10 @@ CREATE TABLE admin_logs (
   KEY idx_admin_logs_admin (admin_id),
   CONSTRAINT fk_admin_logs_admin FOREIGN KEY (admin_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
+
+ALTER TABLE career_simulations
+  ADD CONSTRAINT fk_simulations_quiz FOREIGN KEY (quiz_id) REFERENCES quizzes(id) ON DELETE RESTRICT,
+  ADD CONSTRAINT fk_simulations_quiz_career FOREIGN KEY (quiz_id,career_id) REFERENCES quizzes(id,career_id) ON DELETE RESTRICT;
 
 CREATE TABLE user_education (
   id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
