@@ -1,0 +1,1 @@
+<?php require_once dirname(__DIR__).'/includes/functions.php';require_role(['student','counselor']);verify_csrf();$earned=award_badges($con,(int)user()['id']);json_response(['ok'=>true,'message'=>$earned?'Badge earned: '.implode(', ',$earned):'Badges are up to date.','earned'=>$earned]);

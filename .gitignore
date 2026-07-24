@@ -1,0 +1,8 @@
+# .env
+/vendor/
+/uploads/careers/*
+!/uploads/careers/.gitkeep
+/uploads/profiles/*
+!/uploads/profiles/.gitkeep
+/uploads/resumes/*
+!/uploads/resumes/.gitkeep

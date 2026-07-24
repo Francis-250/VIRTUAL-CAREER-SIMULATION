@@ -1,0 +1,6 @@
+<?php
+require_once dirname(__DIR__).'/includes/functions.php';require_role('counselor');verify_csrf();
+$attemptId=(int)($_POST['attempt_id']??0);$score=(int)($_POST['score']??-1);$feedback=trim($_POST['feedback']??'');$counselorId=(int)user()['id'];
+$stmt=$con->prepare('SELECT t.max_score,a.user_id FROM user_task_attempts a JOIN simulation_tasks t ON t.id=a.task_id WHERE a.id=? AND a.response_text IS NOT NULL');$stmt->bind_param('i',$attemptId);$stmt->execute();$attempt=$stmt->get_result()->fetch_assoc();
+if(!$attempt)json_response(['ok'=>false,'message'=>'Written attempt not found.'],404);if($score<0||$score>(int)$attempt['max_score'])json_response(['ok'=>false,'message'=>'Score must be between 0 and '.$attempt['max_score'].'.'],422);if($feedback===''||mb_strlen($feedback)>2000)json_response(['ok'=>false,'message'=>'Enter concise counselor feedback.'],422);
+$stmt=$con->prepare('UPDATE user_task_attempts SET counselor_score=?,counselor_feedback=?,graded_by=?,graded_at=NOW(),score_earned=? WHERE id=?');$stmt->bind_param('isiii',$score,$feedback,$counselorId,$score,$attemptId);$stmt->execute();notify_user($con,(int)$attempt['user_id'],'feedback','A counselor reviewed one of your written simulation responses.');json_response(['ok'=>true,'message'=>'Score and counselor feedback saved.','reload'=>true]);

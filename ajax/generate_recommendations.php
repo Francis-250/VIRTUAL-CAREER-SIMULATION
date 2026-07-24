@@ -1,0 +1,1 @@
+<?php require_once dirname(__DIR__).'/includes/functions.php';require_role(['student','counselor']);if($_SERVER['REQUEST_METHOD']!=='POST')json_response(['ok'=>false,'message'=>'Method not allowed'],405);verify_csrf();$count=generate_recommendations($con,(int)user()['id']);json_response(['ok'=>true,'message'=>"$count recommendations generated.",'reload'=>true]);

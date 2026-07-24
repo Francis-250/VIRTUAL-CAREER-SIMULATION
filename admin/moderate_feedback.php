@@ -1,0 +1,6 @@
+<?php
+require_once dirname(__DIR__).'/includes/functions.php';require_admin();verify_csrf();
+$id=(int)($_POST['feedback_id']??0);$status=$_POST['moderation_status']??'';$response=trim($_POST['admin_response']??'');$adminId=(int)user()['id'];
+if(!in_array($status,['new','flagged','dismissed','responded'],true))json_response(['ok'=>false,'message'=>'Choose a valid moderation status.'],422);if($status==='responded'&&$response==='')json_response(['ok'=>false,'message'=>'Enter a response before marking as responded.'],422);if(mb_strlen($response)>500)json_response(['ok'=>false,'message'=>'Response is limited to 500 characters.'],422);
+$stmt=$con->prepare('SELECT user_id FROM simulation_feedback WHERE id=?');$stmt->bind_param('i',$id);$stmt->execute();$row=$stmt->get_result()->fetch_assoc();if(!$row)json_response(['ok'=>false,'message'=>'Feedback not found.'],404);
+$stmt=$con->prepare('UPDATE simulation_feedback SET moderation_status=?,admin_response=?,moderated_by=?,moderated_at=NOW() WHERE id=?');$stmt->bind_param('ssii',$status,$response,$adminId,$id);$stmt->execute();admin_log($con,'moderate','simulation_feedback',$id,"Status: $status");if($status==='responded')notify_user($con,(int)$row['user_id'],'feedback','An administrator responded to your simulation feedback.');json_response(['ok'=>true,'message'=>'Feedback moderation updated.','reload'=>true]);
