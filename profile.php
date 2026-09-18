@@ -4,7 +4,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
  if(!hash_equals(csrf_token(),$_POST['csrf']??''))$errors[]='Your session token expired.';
  $name=trim($_POST['name']??'');$phone=trim($_POST['phone']??'');$education=$_POST['education_level']??'';$dob=$_POST['date_of_birth']??'';
  if(mb_strlen($name)<2)$errors[]='Enter your full name.';if(!preg_match('/^[0-9+() -]{7,20}$/',$phone))$errors[]='Enter a valid phone number.';if(!in_array($education,['secondary','undergraduate','graduate','other'],true))$errors[]='Choose your education level.';if(!$dob||strtotime($dob)===false||strtotime($dob)>strtotime('-10 years'))$errors[]='Enter a valid date of birth.';
- if(!$errors){$stmt=$con->prepare('UPDATE users SET name=?,phone=?,education_level=?,date_of_birth=?,profile_completed_at=NOW() WHERE id=?');$stmt->bind_param('ssssi',$name,$phone,$education,$dob,$uid);$stmt->execute();$_SESSION['user']['name']=$name;$_SESSION['user']['profile_complete']=true;flash('success','Profile completed. Welcome to CareerSim!');header('Location:'.url(role_home(user()['role'])));exit;}
+ if(!$errors){$stmt=$con->prepare('UPDATE users SET name=?,phone=?,education_level=?,date_of_birth=?,profile_completed_at=NOW() WHERE id=?');$stmt->bind_param('ssssi',$name,$phone,$education,$dob,$uid);$stmt->execute();$_SESSION['user']['name']=$name;$_SESSION['user']['profile_complete']=true;flash('success','Profile completed. Welcome to Career Guidance System!');header('Location:'.url(role_home(user()['role'])));exit;}
  $profile=array_merge($profile,compact('name','phone','education'));$profile['date_of_birth']=$dob;
 }
 $pageTitle='Complete your profile';$bodyClass='profile-onboarding';require __DIR__.'/includes/header.php';?>
