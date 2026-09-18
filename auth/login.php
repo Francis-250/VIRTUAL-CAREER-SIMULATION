@@ -96,7 +96,7 @@ require dirname(__DIR__).'/includes/header.php';
     </div>
 
     <!-- Quick Role Switcher Demo Helpers -->
-    <div class="card mt-3 bg-light border p-3 rounded-3">
+    <!-- <div class="card mt-3 bg-light border p-3 rounded-3">
       <div class="small fw-bold text-muted mb-2 text-uppercase" style="font-size: 0.72rem; letter-spacing: 0.5px;">Quick Demo Accounts</div>
       <div class="d-flex flex-column gap-1 small">
         <button type="button" class="btn btn-sm btn-outline-primary text-start fill-creds" data-email="student@careersim.test" data-pass="Student123!">
@@ -109,7 +109,7 @@ require dirname(__DIR__).'/includes/header.php';
           <i class="bi bi-shield-lock me-1"></i><strong>Admin:</strong> admin@careersim.test
         </button>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
